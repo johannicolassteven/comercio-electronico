@@ -8,8 +8,8 @@ import Footer from './Footer'
 const Product = ({image, name, price, id}) => {
   return <Wrapper>
     <div className='container'>
-      <img src={image} alt={name}/>
-      <Link to={`/products/${id}`} className='link'>
+    <Link to={`/products/${id}`}><img src={image} alt={name}/></Link> 
+      <Link to={`/products/${id}`} className='link1'>
         <FaSearch/>
       </Link>
     </div>
@@ -33,7 +33,7 @@ const Wrapper = styled.article`
     border-radius: var(--radius);
     transition: var(--transition);
   }
-  .link {
+  .link1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,7 +56,7 @@ const Wrapper = styled.article`
   .container:hover img {
     opacity: 0.5;
   }
-  .container:hover .link {
+  .container:hover .link1 {
     opacity: 1;
   }
   footer {

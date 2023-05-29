@@ -31,23 +31,23 @@ fetchSingleProduct(`${url}${id}`)
   if (error) {
     return <Error/>
   }
-  const{name,price,description,stock,starts,reviews,id:sku,
+  const{name,price,description,stock,stars,reviews,id:sku,
   company,images} = product
   return (
   <Wrapper>
     <PageHero title={name} product/>
     <div className='section section-center page'>
       <Link to="/products" className='btn'>back to products</Link>
-      <div className='products-center'>
+      <div className='product-center'>
         <ProductImages images={images}/>
         <section className='content'>
           <h2>{name}</h2>
-          <Stars/>
+          <Stars stars={stars} reviews={reviews}/>
           <h5 className='price'>{formatPrice(price)} </h5>
           <p className='description'>{description}</p>
           <p className='info'>
             <span>Available :</span>
-            {stock > 0 ? "In stock" : "Out of stock"}
+            {stock > 0 ? `In stock (${stock})` : `Out of stock`}
           </p>
           <p className='info'>
             <span>SKU :</span>
@@ -58,7 +58,7 @@ fetchSingleProduct(`${url}${id}`)
             {company}
           </p>
           <hr/>
-          {stock > 0 && <AddToCart/>}
+          {stock > 0 && <AddToCart product = {product}/>}
         </section>
       </div>
     </div>

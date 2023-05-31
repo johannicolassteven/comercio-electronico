@@ -1,4 +1,4 @@
-import Aboutt from "./AboutPage"
+import About from "./AboutPage"
 import Home from "./HomePage"
 import Products from "./ProductsPage"
 import SingleProducts from "./SingleProductPage"
@@ -9,4 +9,4 @@ import Private from "./PrivateRoute"
 import AuthWrapper from "./AuthWrapper"
 
 
-export {Aboutt,Home,Private,Products,SingleProducts,Cart,Checkout,Error,AuthWrapper}
+export {About,Home,Private,Products,SingleProducts,Cart,Checkout,Error,AuthWrapper}
